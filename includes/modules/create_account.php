@@ -29,6 +29,12 @@ $extra_welcome_text = '';
 $send_welcome_email = true;
 
 $antiSpamFieldName = $_SESSION['antispam_fieldname'] ?? 'should_be_empty';
+/**
+* Redirect to the account page
+*/
+if (isset($_SESSION['customer_id'])) { 
+	zen_redirect(zen_href_link('account', '', 'SSL'));
+}
 
 /**
  * Process form contents
